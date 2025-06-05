@@ -1,93 +1,106 @@
 
-## Libft
+## 📚 Libft
 
-Libft is a project from the 42 Madrid curriculum. The goal is to create a custom C library that implements a series of standard functions, along with additional functions useful for future projects. 
+Libft es un proyecto fundamental del currículo de 42 Madrid. Su objetivo es crear una librería en C desde cero, reimplementando funciones estándar de la biblioteca <ctype.h>, <string.h>, <stdlib.h>, y añadiendo utilidades adicionales que facilitarán futuros proyectos.
 
-The entire project was developed in compliance with all the Norminette rules, ensuring clean and consistent code formatting.
-## Features
+Todo el código cumple con las reglas de Norminette, garantizando una sintaxis limpia, coherente y legible.
 
-Libft includes reimplementations of standard C library functions to handle characters, strings, and memory, also with other utility functions:
+### 🔠 Clasificación y Conversión de Caracteres
+
+| Función        | Descripción                                             |
+|----------------|---------------------------------------------------------|
+| `ft_isalpha`   | Verifica si un carácter es alfabético (A-Z, a-z)       |
+| `ft_isdigit`   | Verifica si un carácter es un dígito numérico (0-9)    |
+| `ft_isalnum`   | Verifica si un carácter es alfanumérico                |
+| `ft_isascii`   | Verifica si un carácter pertenece al set ASCII (0-127) |
+| `ft_isprint`   | Verifica si un carácter es imprimible                  |
+| `ft_toupper`   | Convierte un carácter a mayúscula                      |
+| `ft_tolower`   | Convierte un carácter a minúscula                      |
+
+### 🔍 Búsqueda y Comparación de Cadenas
+
+| Función         | Descripción                                                           |
+|-----------------|-----------------------------------------------------------------------|
+| `ft_strchr`     | Busca la primera ocurrencia de un carácter                            |
+| `ft_strrchr`    | Busca la última ocurrencia de un carácter                             |
+| `ft_strncmp`    | Compara dos cadenas hasta n caracteres                                |
+| `ft_strnstr`    | Busca una subcadena dentro de otra hasta n caracteres                 |
+
+### 🧵 Manipulación de Cadenas
+| Función         | Descripción                                                             |
+|-----------------|-------------------------------------------------------------------------|
+| `ft_substr`     | Extrae una subcadena desde una posición                                 |
+| `ft_strjoin`    | Une dos cadenas en una nueva                                            |
+| `ft_strtrim`    | Elimina caracteres específicos al inicio y final                        |
+| `ft_split`      | Divide una cadena según un delimitador                                  |
+| `ft_itoa`       | Convierte un número entero en cadena                                    |
+| `ft_strmapi`    | Aplica una función a cada carácter de una cadena (con retorno)          |
+| `ft_striteri`   | Aplica una función a cada carácter de una cadena (sin retorno)          |
 
 
-### Character Classification and Conversion: ###
-
-- isalpha: Checks if a character is alphabetic (A-Z, a-z).
-- isdigit: Checks if a character is a numeric digit (0-9).
-- isalnum: Checks if a character is alphanumeric (letter or digit).
-- isascii: Checks if a character is an ASCII character (0-127).
-- isprint: Checks if a character is printable, including spaces.
-- toupper: Converts a lowercase letter to uppercase.
-- tolower: Converts an uppercase letter to lowercase.
-
-### Character Handling and Output: ###
-
-- ft_putchar_fd: Writes a character to a specified file descriptor.
-- ft_putstr_fd: Writes a string to a specified file descriptor.
-- ft_putendl_fd: Writes a string followed by a newline to a specified file descriptor.
-- ft_putnbr_fd: Writes an integer as a string to a specified file descriptor.
-- ft_strmapi: Applies a function to each character of a string and returns a new string.
-- ft_striteri: Applies a function to each character of a string, passing the character's index and address.
+### 💾 Manejo de Memoria
+| Función         | Descripción                                                   |
+|-----------------|---------------------------------------------------------------|
+| `ft_memset`     | Rellena un bloque de memoria con un valor                     |
+| `ft_bzero`      | Pone en cero un bloque de memoria                             |
+| `ft_memcpy`     | Copia memoria sin solapamiento                                |
+| `ft_memmove`    | Copia memoria permitiendo solapamiento                        |
+| `ft_memchr`     | Busca un byte en memoria                                      |
+| `ft_memcmp`     | Compara dos bloques de memoria                                |
 
 
-### String Searching and Comparison:
+### 🛠️ Utilidades de Memoria y Conversión
 
-- strchr: Finds the first occurrence of a character in a string.
-- strrchr: Finds the last occurrence of a character in a string.
-- strncmp: Compares two strings up to a given number of characters.
--  strnstr: Finds the first occurrence of a substring within a string, up to a specified length.
+| Función         | Descripción                                                |
+|-----------------|------------------------------------------------------------|
+| `ft_calloc`     | Reserva memoria y la inicializa en cero                    |
+| `ft_strdup`     | Duplica una cadena en nueva memoria                        |
+| `ft_atoi`       | Convierte una cadena en número entero                      |
 
-### String Manipulation:
+### 📤 Salida por Descriptor
 
-- ft_substr: Allocates and returns a substring from a given string.
-- ft_strjoin: Allocates and returns a new string formed by concatenating two strings.
-- ft_strtrim: Trims specified characters from the start and end of a string.
-- ft_split: Splits a string into an array of substrings based on a delimiter.
-- ft_itoa: Converts an integer to a string.
+| Función         | Descripción                                                  |
+|-----------------|--------------------------------------------------------------|
+| `ft_putchar_fd` | Escribe un carácter en un file descriptor                    |
+| `ft_putstr_fd`  | Escribe una cadena                                           |
+| `ft_putendl_fd` | Escribe una cadena seguida de salto de línea                 |
+| `ft_putnbr_fd`  | Escribe un número entero como string                         |
 
-### Memory Handling:
+### ⚙️ Compilación
 
-- memset: Fills a block of memory with a specified value.
--  bzero: Sets a block of memory to zero.
-- memcpy: Copies data from one memory area to another.
-- memmove: Copies data between memory areas that may overlap.
-- memchr: Searches for a byte in a memory block.
-- memcmp: Compares two memory blocks.
-
-### Memory Allocation and Utility:
-
-- calloc: Allocates and zero-initializes memory for an array.
-- strdup: Duplicates a string by allocating memory for a new copy.
-- atoi: Converts a string to an integer.
-
-These functions provide a comprehensive toolkit for efficient string and memory management in C programming.
-
-## Compilation
-
-Compile the library: Use make to compile and generate the static library libft.a:
+🔧 Compilar la librería
 
 ```bash
   make
 ```
+Genera el archivo libft.a, una librería estática lista para usarse.
 
-Clean temporary files: To remove object files and temporary files:
+🧹 Limpiar archivos temporales
 
 ```bash
   make clean
 ```
+Elimina archivos .o intermedios.
 
-Delete all generated files: To remove the compiled library and all generated files:
-
+🗑️ Limpiar todo
 ```bash
   make fclean
 ```
 
-Recompile the library: To clean and recompile from scratch:
+🔄 Recomipilar desde cero
 ```bash
   make re
 ```
+Hace un fclean y recompila todo.
 
-Use the library in your project: Include the library in your project by adding the libft.a file and necessary headers. You can do this with:
+🧪 Uso en tu Proyecto
+Puedes utilizar libft fácilmente en tu código C:
 
 ```bash
  gcc -o your_program your_program.c libft/libft.a
+```
+Recuerda incluir el encabezado:
+
+```bash
+#include "libft.h"
 ```
